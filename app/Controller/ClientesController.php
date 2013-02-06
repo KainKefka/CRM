@@ -1,9 +1,9 @@
 ﻿<?php
-	class EmpresasController extends AppController {
+	class ClientesController extends AppController {
 		public $helpers = array('Html', 'Form');
-
+		
 		public function index() {
-			$this->set('empresas', $this->Empresa->find('all'));
+			$this->set('clientes', $this->Cliente->find('all'));
 		}
 		
 		public function ver($id = null) {
@@ -11,19 +11,19 @@
 				throw new NotFoundException(__('Inválido'));
 			}
 			
-			$empresa = $this->Empresa->findById($id);
+			$cliente = $this->Cliente->findById($id);
 			
-			if (!$empresa) {
+			if (!$cliente) {
 				throw new NotFoundException(__('Inválido'));
 			}
 			
-			$this->set('empresa', $empresa);
+			$this->set('cliente', $cliente);
 		}
 		
 		public function adicionar() {
 			if ($this->request->is('post')) {
-				$this->Empresa->create();
-				if ($this->Empresa->save($this->request->data)) {
+				$this->Cliente->create();
+				if ($this->Cliente->save($this->request->data)) {
 					$this->Session->setFlash('As informações foram adicionadas');
 					$this->redirect(array('action' => 'index'));
 				} else {
@@ -37,14 +37,14 @@
 				throw new NotFoundException(__('Inválido'));
 			}
 
-			$empresa = $this->Empresa->findById($id);
-			if (!$empresa) {
+			$cliente = $this->Cliente->findById($id);
+			if (!$cliente) {
 				throw new NotFoundException(__('Inválido'));
 			}
 
 			if ($this->request->is('post') || $this->request->is('put')) {
-				$this->Empresa->id = $id;
-				if ($this->Empresa->save($this->request->data)) {
+				$this->Cliente->id = $id;
+				if ($this->Cliente->save($this->request->data)) {
 					$this->Session->setFlash('As informações foram atualizadas');
 					$this->redirect(array('action' => 'index'));
 				} else {
@@ -53,7 +53,7 @@
 			}
 
 			if (!$this->request->data) {
-				$this->request->data = $empresa;
+				$this->request->data = $cliente;
 			}
 		}
 		
@@ -62,10 +62,10 @@
 				throw new MethodNotAllowedException();
 			}
 			
-			$empresa = $this->Empresa->findById($id);
+			$cliente = $this->Cliente->findById($id);
 			
-			if ($this->Empresa->delete($id)) {
-				$this->Session->setFlash('A empresa: ' . $empresa['Empresa']['nome'] . ' foi deletada');
+			if ($this->cliente->delete($id)) {
+				$this->Session->setFlash('O usuário: ' . $cliente['Cliente']['nome'] . ' foi deletado');
 				$this->redirect(array('action' => 'index'));
 			}
 		}

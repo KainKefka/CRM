@@ -1,9 +1,9 @@
 ﻿<?php
-	class EmpresasController extends AppController {
+	class ParametrosController extends AppController {
 		public $helpers = array('Html', 'Form');
-
+		
 		public function index() {
-			$this->set('empresas', $this->Empresa->find('all'));
+			$this->set('parametros', $this->Parametro->find('all'));
 		}
 		
 		public function ver($id = null) {
@@ -11,19 +11,19 @@
 				throw new NotFoundException(__('Inválido'));
 			}
 			
-			$empresa = $this->Empresa->findById($id);
+			$parametro = $this->Parametro->findById($id);
 			
-			if (!$empresa) {
+			if (!$parametro) {
 				throw new NotFoundException(__('Inválido'));
 			}
 			
-			$this->set('empresa', $empresa);
+			$this->set('parametro', $parametro);
 		}
 		
 		public function adicionar() {
 			if ($this->request->is('post')) {
-				$this->Empresa->create();
-				if ($this->Empresa->save($this->request->data)) {
+				$this->Parametro->create();
+				if ($this->Parametro->save($this->request->data)) {
 					$this->Session->setFlash('As informações foram adicionadas');
 					$this->redirect(array('action' => 'index'));
 				} else {
@@ -37,14 +37,14 @@
 				throw new NotFoundException(__('Inválido'));
 			}
 
-			$empresa = $this->Empresa->findById($id);
-			if (!$empresa) {
+			$parametro = $this->Parametro->findById($id);
+			if (!$parametro) {
 				throw new NotFoundException(__('Inválido'));
 			}
 
 			if ($this->request->is('post') || $this->request->is('put')) {
-				$this->Empresa->id = $id;
-				if ($this->Empresa->save($this->request->data)) {
+				$this->Parametro->id = $id;
+				if ($this->Parametro->save($this->request->data)) {
 					$this->Session->setFlash('As informações foram atualizadas');
 					$this->redirect(array('action' => 'index'));
 				} else {
@@ -53,7 +53,7 @@
 			}
 
 			if (!$this->request->data) {
-				$this->request->data = $empresa;
+				$this->request->data = $parametro;
 			}
 		}
 		
@@ -62,10 +62,10 @@
 				throw new MethodNotAllowedException();
 			}
 			
-			$empresa = $this->Empresa->findById($id);
+			//$parametro = $this->Parametro->findById($id);
 			
-			if ($this->Empresa->delete($id)) {
-				$this->Session->setFlash('A empresa: ' . $empresa['Empresa']['nome'] . ' foi deletada');
+			if ($this->parametro->delete($id)) {
+				$this->Session->setFlash('O parâmetro: ' . $id . ' foi deletado');
 				$this->redirect(array('action' => 'index'));
 			}
 		}
