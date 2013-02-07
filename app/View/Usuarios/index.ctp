@@ -19,7 +19,7 @@
         <!--<td><?php //echo $usuario['Usuario']['id']; ?></td>-->
         <td>
             <?php echo $this->Html->link($usuario['Usuario']['nome'],
-array('controller' => 'usuario', 'action' => 'ver', $usuario['Usuario']['id'])); ?>
+array('controller' => 'usuarios', 'action' => 'ver', $usuario['Usuario']['id'])); ?>
         </td>
         <td><?php echo $usuario['Usuario']['matricula']; ?></td>
 		<td><?php echo $usuario['Usuario']['status']; ?></td>

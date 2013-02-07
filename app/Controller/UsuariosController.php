@@ -21,9 +21,11 @@
 		}
 		
 		public function adicionar() {
+			$this->set('empresa', $this->Usuario->Empresa->find('list', array('fields' => array('Empresa.nome'))));
+		
 			if ($this->request->is('post')) {
 				$this->Usuario->create();
-				$empresa = $this->Empresa->find('all');
+				
 				if ($this->Usuario->save($this->request->data)) {
 					$this->Session->setFlash('As informações foram adicionadas');
 					$this->redirect(array('action' => 'index'));
