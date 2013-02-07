@@ -1,9 +1,9 @@
 ﻿<?php
-	class UsuariosController extends AppController {
+	class AtendimentosController extends AppController {
 		public $helpers = array('Html', 'Form');
 		
 		public function index() {
-			$this->set('usuarios', $this->Usuario->find('all'));
+			$this->set('atendimentos', $this->Atendimento->find('all'));
 		}
 		
 		public function ver($id = null) {
@@ -11,20 +11,19 @@
 				throw new NotFoundException(__('Inválido'));
 			}
 			
-			$usuario = $this->Usuario->findById($id);
+			$atendimento = $this->Atendimento->findById($id);
 			
-			if (!$usuario) {
+			if (!$atendimento) {
 				throw new NotFoundException(__('Inválido'));
 			}
 			
-			$this->set('usuario', $usuario);
+			$this->set('atendimento', $atendimento);
 		}
 		
 		public function adicionar() {
 			if ($this->request->is('post')) {
-				$this->Usuario->create();
-				$empresa = $this->Empresa->find('all');
-				if ($this->Usuario->save($this->request->data)) {
+				$this->atendimento->create();
+				if ($this->Atendimento->save($this->request->data)) {
 					$this->Session->setFlash('As informações foram adicionadas');
 					$this->redirect(array('action' => 'index'));
 				} else {
@@ -38,14 +37,14 @@
 				throw new NotFoundException(__('Inválido'));
 			}
 
-			$usuario = $this->Usuario->findById($id);
-			if (!$usuario) {
+			$atendimento = $this->Atendimento->findById($id);
+			if (!$atendimento) {
 				throw new NotFoundException(__('Inválido'));
 			}
 
 			if ($this->request->is('post') || $this->request->is('put')) {
-				$this->Usuario->id = $id;
-				if ($this->Usuario->save($this->request->data)) {
+				$this->Atendimento->id = $id;
+				if ($this->Atendimento->save($this->request->data)) {
 					$this->Session->setFlash('As informações foram atualizadas');
 					$this->redirect(array('action' => 'index'));
 				} else {
@@ -54,7 +53,7 @@
 			}
 
 			if (!$this->request->data) {
-				$this->request->data = $usuario;
+				$this->request->data = $atendimento;
 			}
 		}
 		
@@ -63,10 +62,8 @@
 				throw new MethodNotAllowedException();
 			}
 			
-			$usuario = $this->Usuario->findById($id);
-			
-			if ($this->usuario->delete($id)) {
-				$this->Session->setFlash('O usuário: ' . $usuario['Usuario']['nome'] . ' foi deletado');
+			if ($this->Atendimento->delete($id)) {
+				$this->Session->setFlash('O atendimento: ' . $id . ' foi deletado');
 				$this->redirect(array('action' => 'index'));
 			}
 		}

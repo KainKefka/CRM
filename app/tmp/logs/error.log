@@ -1,0 +1,54 @@
+2013-02-05 19:52:43 Error: [MissingViewException] View file "C:\Program Files\EasyPHP-12.1\www\CRM\app\View\Empresas\index.ctp" is missing.
+#0 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\View\View.php(473): View->_getViewFileName(NULL)
+#1 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Controller\Controller.php(956): View->render(NULL, NULL)
+#2 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\Program Files\EasyPHP-12.1\www\CRM\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-02-05 21:33:57 Error: [MissingActionException] Action EmpresasController::view() could not be found.
+#0 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#1 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\Program Files\EasyPHP-12.1\www\CRM\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-02-05 21:51:20 Error: [MissingViewException] View file "C:\Program Files\EasyPHP-12.1\www\CRM\app\View\Empresas\ver.ctp" is missing.
+#0 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\View\View.php(473): View->_getViewFileName(NULL)
+#1 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Controller\Controller.php(956): View->render(NULL, NULL)
+#2 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(EmpresasController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\Program Files\EasyPHP-12.1\www\CRM\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-02-06 13:38:09 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [C:\Program Files\EasyPHP-12.1\www\CRM\app\Controller\EmpresasController.php, line 67]
+2013-02-06 13:38:09 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+#0 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Error\ErrorHandler.php(161): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\Program File...', 67)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\Program File...', 67, Array)
+#2 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\Program File...', 67, Array)
+#3 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-02-07 12:04:04 Error: [MissingControllerException] Controller class CategoriasController could not be found.
+#0 C:\Program Files\EasyPHP-12.1\www\CRM\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-02-07 15:44:58 Error: [MissingHelperException] Helper class EmpresaHelper could not be found.
+#0 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\View\HelperCollection.php(62): HelperCollection->load('Empresa')
+#1 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\View\View.php(815): HelperCollection->__isset('Empresa')
+#2 C:\Program Files\EasyPHP-12.1\www\CRM\app\View\Usuarios\adicionar.ctp(7): View->__get('Empresa')
+#3 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\View\View.php(923): include('C:\Program File...')
+#4 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\View\View.php(886): View->_evaluate('C:\Program File...', Array)
+#5 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\View\View.php(476): View->_render('C:\Program File...')
+#6 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Controller\Controller.php(956): View->render(NULL, NULL)
+#7 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#8 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsuariosController), Object(CakeRequest), Object(CakeResponse))
+#9 C:\Program Files\EasyPHP-12.1\www\CRM\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-02-07 15:45:42 Error: [MissingHelperException] Helper class EmpresaHelper could not be found.
+#0 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\View\HelperCollection.php(62): HelperCollection->load('Empresa')
+#1 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\View\View.php(815): HelperCollection->__isset('Empresa')
+#2 C:\Program Files\EasyPHP-12.1\www\CRM\app\View\Usuarios\adicionar.ctp(7): View->__get('Empresa')
+#3 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\View\View.php(923): include('C:\Program File...')
+#4 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\View\View.php(886): View->_evaluate('C:\Program File...', Array)
+#5 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\View\View.php(476): View->_render('C:\Program File...')
+#6 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Controller\Controller.php(956): View->render(NULL, NULL)
+#7 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#8 C:\Program Files\EasyPHP-12.1\www\CRM\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsuariosController), Object(CakeRequest), Object(CakeResponse))
+#9 C:\Program Files\EasyPHP-12.1\www\CRM\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}

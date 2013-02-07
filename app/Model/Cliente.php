@@ -19,9 +19,6 @@
 			'telefone1' => array(
 				'rule' => 'notEmpty'
 			),
-			'telefone2' => array(
-				'rule' => 'notEmpty'
-			),
 			'empresa_id' => array(
 				'rule' => 'notEmpty'
 			)

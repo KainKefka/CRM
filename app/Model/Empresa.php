@@ -8,5 +8,7 @@
 				'rule' => 'notEmpty'
 			)
 		);
+		
+		public $hasMany = 'Usuario';
 	}
 ?>
