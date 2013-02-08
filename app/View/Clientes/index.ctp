@@ -19,7 +19,7 @@
         <!--<td><?php //echo $cliente['Cliente']['id']; ?></td>-->
         <td>
             <?php echo $this->Html->link($cliente['Cliente']['nome'],
-array('controller' => 'cliente', 'action' => 'ver', $cliente['Cliente']['id'])); ?>
+array('controller' => 'clientes', 'action' => 'ver', $cliente['Cliente']['id'])); ?>
         </td>
         <td><?php echo $cliente['Cliente']['matricula']; ?></td>
 		<td><?php echo $cliente['Cliente']['status']; ?></td>

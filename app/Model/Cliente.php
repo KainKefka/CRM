@@ -1,5 +1,8 @@
 ﻿<?php
 	class Cliente extends AppModel {
+		public $belongsTo = 'Empresa';
+		public $hasMany = 'Atendimento';
+		
 		public $validate = array(
 			'nome' => array(
 				'rule' => 'notEmpty'
@@ -23,7 +26,5 @@
 				'rule' => 'notEmpty'
 			)
 		);
-		
-		public $belongsTo = 'Empresa';
 	}
 ?>

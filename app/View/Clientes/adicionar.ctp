@@ -7,7 +7,7 @@
 	echo $this->Form->input('data_cadastro');
 	echo $this->Form->input('email');
 	echo $this->Form->input('telefone1');
-	echo $this->Form->input('telefone2');
-	echo $this->Form->input('empresa_id');
+	echo $this->Form->input('telefone2');	
+	echo $this->Form->select('empresa_id', $empresa);
 	echo $this->Form->end('Salvar');
 ?>

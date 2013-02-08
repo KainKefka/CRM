@@ -21,8 +21,13 @@
 		}
 		
 		public function adicionar() {
+			$this->set('empresa', $this->Atendimento->Empresa->find('list', array('fields' => array('Empresa.nome'))));
+			$this->set('usuario', $this->Atendimento->Usuario->find('list', array('fields' => array('Usuario.nome'))));
+			$this->set('cliente', $this->Atendimento->Cliente->find('list', array('fields' => array('Cliente.nome'))));
+			$this->set('categoria', $this->Atendimento->Categoria->find('list', array('fields' => array('Categoria.descricao'))));
+		
 			if ($this->request->is('post')) {
-				$this->atendimento->create();
+				$this->Atendimento->create();
 				if ($this->Atendimento->save($this->request->data)) {
 					$this->Session->setFlash('As informações foram adicionadas');
 					$this->redirect(array('action' => 'index'));
@@ -42,6 +47,11 @@
 				throw new NotFoundException(__('Inválido'));
 			}
 
+			$this->set('empresa', $this->Atendimento->Empresa->find('list', array('fields' => array('Empresa.nome'))));
+			$this->set('usuario', $this->Atendimento->Usuario->find('list', array('fields' => array('Usuario.nome'))));
+			$this->set('cliente', $this->Atendimento->Cliente->find('list', array('fields' => array('Cliente.nome'))));
+			$this->set('categoria', $this->Atendimento->Categoria->find('list', array('fields' => array('Categoria.descricao'))));
+			
 			if ($this->request->is('post') || $this->request->is('put')) {
 				$this->Atendimento->id = $id;
 				if ($this->Atendimento->save($this->request->data)) {

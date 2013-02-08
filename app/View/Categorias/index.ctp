@@ -16,7 +16,7 @@
         <td><?php echo $categoria['Categoria']['id']; ?></td>
         <td>
             <?php echo $this->Html->link($categoria['Categoria']['descricao'],
-array('controller' => 'categoria', 'action' => 'ver', $categoria['Categoria']['id'])); ?>
+array('controller' => 'categorias', 'action' => 'ver', $categoria['Categoria']['id'])); ?>
         </td>
 		<td><?php echo $this->Html->link('Editar', array('action' => 'editar', $categoria['Categoria']['id'])); ?>
 			<?php echo $this->Form->postLink(

@@ -1,5 +1,7 @@
 ﻿<?php
 	class Parametro extends AppModel {
+		public $belongsTo = 'Empresa'; //hasAndBelongsToMany
+		
 		public $validate = array(
 			'descricao' => array(
 				'rule' => 'notEmpty'
@@ -11,7 +13,5 @@
 				'rule' => 'notEmpty'
 			)
 		);
-		
-		public $belongsTo = 'Empresa';
 	}
 ?>

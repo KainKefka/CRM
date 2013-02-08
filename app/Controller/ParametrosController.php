@@ -21,6 +21,8 @@
 		}
 		
 		public function adicionar() {
+			$this->set('empresa', $this->Parametro->Empresa->find('list', array('fields' => array('Empresa.nome'))));
+			
 			if ($this->request->is('post')) {
 				$this->Parametro->create();
 				if ($this->Parametro->save($this->request->data)) {
@@ -42,6 +44,8 @@
 				throw new NotFoundException(__('Inválido'));
 			}
 
+			$this->set('empresa', $this->Parametro->Empresa->find('list', array('fields' => array('Empresa.nome'))));
+			
 			if ($this->request->is('post') || $this->request->is('put')) {
 				$this->Parametro->id = $id;
 				if ($this->Parametro->save($this->request->data)) {

@@ -18,7 +18,7 @@
     <tr>
         <td>
             <?php echo $this->Html->link($atendimento['Atendimento']['id'],
-				array('controller' => 'atendimento', 'action' => 'ver', $atendimento['Atendimento']['id'])); ?>
+				array('controller' => 'atendimentos', 'action' => 'ver', $atendimento['Atendimento']['id'])); ?>
         </td>
 		<td><?php echo $atendimento['Atendimento']['protocolo']; ?></td>
 		<td><?php echo $atendimento['Atendimento']['data_hora']; ?></td>

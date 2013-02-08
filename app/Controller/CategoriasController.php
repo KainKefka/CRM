@@ -22,7 +22,7 @@
 		
 		public function adicionar() {
 			if ($this->request->is('post')) {
-				$this->categoria->create();
+				$this->Categoria->create();
 				if ($this->Categoria->save($this->request->data)) {
 					$this->Session->setFlash('As informações foram adicionadas');
 					$this->redirect(array('action' => 'index'));

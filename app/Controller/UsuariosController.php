@@ -4,6 +4,15 @@
 		
 		public function index() {
 			$this->set('usuarios', $this->Usuario->find('all'));
+			
+			/*$options['joins'] = array(array('table' => 'empresas', 'alias' => 'Empresa', 'type' => 'LEFT', 'conditions' => array(	'Empresa.id = Usuario.empresa_id')));
+			
+			$empresa = $this->Usuario->find('all', $options);
+			
+			$this->set('empresa', $empresa);*/
+			
+			/*$empresa = $this->Usuario->find('all', array('contain' => array('Empresa'), 'conditions' => array('Usuario.empresa_id' => 'Empresa.id')));
+			$this->set('empresa', $empresa);*/
 		}
 		
 		public function ver($id = null) {
@@ -45,6 +54,8 @@
 				throw new NotFoundException(__('Inválido'));
 			}
 
+			$this->set('empresa', $this->Usuario->Empresa->find('list', array('fields' => array('Empresa.nome'))));
+			
 			if ($this->request->is('post') || $this->request->is('put')) {
 				$this->Usuario->id = $id;
 				if ($this->Usuario->save($this->request->data)) {

@@ -1,6 +1,6 @@
 ﻿<?php
 	class Empresa extends AppModel {
-		public $hasMany = array('Usuario','Cliente');
+		public $hasMany = array('Usuario','Cliente', 'Parametro', 'Atendimento');
 		
 		public $validate = array(
 			'nome' => array(

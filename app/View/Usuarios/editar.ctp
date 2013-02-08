@@ -4,7 +4,7 @@
     echo $this->Form->input('matricula');
 	echo $this->Form->input('nome');
 	echo $this->Form->input('status');
-	echo $this->Form->input('empresa_id');
+	echo $this->Form->select('empresa_id', $empresa);
     echo $this->Form->input('id', array('type' => 'hidden'));
     echo $this->Form->end('Salvar');
 ?>

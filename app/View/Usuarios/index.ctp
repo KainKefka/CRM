@@ -23,7 +23,7 @@ array('controller' => 'usuarios', 'action' => 'ver', $usuario['Usuario']['id']))
         </td>
         <td><?php echo $usuario['Usuario']['matricula']; ?></td>
 		<td><?php echo $usuario['Usuario']['status']; ?></td>
-		<td><?php echo $usuario['Usuario']['empresa_id']; ?></td>
+		<td><?php echo $usuario['Usuario']['id']; ?></td>
 		<td><?php echo $this->Html->link('Editar', array('action' => 'editar', $usuario['Usuario']['id'])); ?>
 			<?php echo $this->Form->postLink(
                 'Deletar',

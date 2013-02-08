@@ -1,5 +1,8 @@
 ﻿<?php
 	class Atendimento extends AppModel {
+		//public $hasMany = 'Categoria';
+		public $belongsTo = array('Empresa', 'Usuario', 'Cliente', 'Categoria');
+	
 		public $validate = array(
 			'protocolo' => array('rule' => 'notEmpty'),
 			'data_hora' => array('rule' => 'notEmpty'),

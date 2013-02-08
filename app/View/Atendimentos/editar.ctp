@@ -8,10 +8,10 @@
 	echo $this->Form->input('plano_atendimento');
 	echo $this->Form->input('observacoes', array('rows' => '3'));
 	echo $this->Form->input('nota');
-	echo $this->Form->input('empresa_id');
-	echo $this->Form->input('usuario_id');
-	echo $this->Form->input('cliente_id');
-	echo $this->Form->input('categoria_id');
+	echo $this->Form->select('empresa_id', $empresa);
+	echo $this->Form->select('usuario_id', $usuario);
+	echo $this->Form->select('cliente_id', $cliente);
+	echo $this->Form->select('categoria_id', $categoria);
 	echo $this->Form->input('id', array('type' => 'hidden'));
 	echo $this->Form->end('Salvar');
 ?>

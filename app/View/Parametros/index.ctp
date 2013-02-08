@@ -18,7 +18,7 @@
         <td><?php echo $parametro['Parametro']['id']; ?></td>
         <td>
             <?php echo $this->Html->link($parametro['Parametro']['descricao'],
-array('controller' => 'parametro', 'action' => 'ver', $parametro['Parametro']['id'])); ?>
+array('controller' => 'parametros', 'action' => 'ver', $parametro['Parametro']['id'])); ?>
         </td>
         <td><?php echo $parametro['Parametro']['valor']; ?></td>
 		<td><?php echo $parametro['Parametro']['empresa_id']; ?></td>
